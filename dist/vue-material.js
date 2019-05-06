@@ -4029,7 +4029,7 @@ exports.default = new _MdComponent2.default({
   name: 'MdWave',
   data: function data() {
     return {
-      animating: true
+      animating: false
     };
   },
 
@@ -4037,9 +4037,12 @@ exports.default = new _MdComponent2.default({
     waveClasses: null,
     waveStyles: null
   },
+  mounted: function mounted() {
+    this.animating = true;
+  },
   methods: {
     end: function end() {
-      this.animating = null;
+      this.animating = false;
       this.$emit('md-end');
     }
   }
